@@ -1,0 +1,662 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: 1s;
+}
+
+::-webkit-scrollbar {
+    width: 2.5px;
+    height: 2.5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffa500;
+    border-radius: 4px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 30px;
+}
+
+nav a {
+    margin-right: 20px;
+    color: white;
+    text-decoration: none
+}
+
+nav a:hover {
+    color: orange;
+}
+
+.i18 button {
+    padding: 3%;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 8px;
+    color: white;
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom: 3px double white;
+    font-size: 13px;
+}
+
+.i18 button:hover {
+    border: none;
+    transition: 100ms;
+    outline: 3px double white;
+    background-color: orange;
+    border-radius: 10px;
+}
+
+.perogif {
+    width: 100%;
+    height: 80vh;
+    background: url(./Visual/main.gif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    transition: 0;
+}
+
+.medflex {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+
+.med h1 {
+    font-size: 70px;
+}
+
+.yellow {
+    font-size: 70px;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 200px;
+    margin-top: -20px;
+    color: #ffa500;
+}
+
+.btn {
+    background: linear-gradient(to right, dodgerblue, aquamarine);
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 20px;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, rgb(31, 123, 214), rgb(69, 163, 133));
+}
+
+.outline {
+    margin-top: -30px;
+    color: transparent;
+    -webkit-text-stroke: 3px white;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column * {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.column *:hover {
+    filter: brightness(0%);
+}
+
+.inner {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.inner h1 {
+    color: dodgerblue;
+}
+
+.inner div {
+    padding: 30px;
+    background-color: lightgray;
+    border-radius: 10px;
+    width: 40%;
+    height: 35vh;
+    margin-left: -300px;
+}
+
+.inner img {
+    width: 60%;
+}
+
+.types {
+    margin-top: 100px;
+    padding: 30px;
+}
+
+.types h1 {
+    color: dodgerblue;
+}
+
+.types h2 {
+    color: dodgerblue;
+}
+
+.circle {
+    background-color: orange;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.circle img {
+    filter: brightness(0%);
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+.cont {
+    display: flex;
+    width: 90%;
+}
+
+.fourgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.lastmid {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.gallery {
+    margin-top: 100px;
+    padding: 30px;
+}
+
+.gallery img:hover {
+    transform: scale(1.04);
+    transition: 0.8s;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header h1 {
+    color: dodgerblue;
+}
+
+.header a {
+    color: black;
+}
+
+.imagesDown {
+    margin-top: -280px;
+}
+
+.imagesDown img {
+    margin-right: 14px;
+    cursor: pointer;
+}
+
+.imagesUp {
+    cursor: pointer;
+    display: flex;
+}
+
+.minus {
+    display: flex;
+    height: 260px;
+}
+
+.upInner {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.upInner img {
+    margin-bottom: 10px;
+}
+
+.alone {
+    margin-left: 390px;
+    width: 500px;
+}
+
+.request {
+    margin-top: 100px;
+    color: white;
+    width: 100%;
+    height: 70vh;
+    background: url(./Visual/align.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.request form {
+    height: 70vh;
+    width: 30%;
+    backdrop-filter: blur(30px);
+    margin-left: 3%;
+    padding: 3%;
+    padding-top: 8%;
+
+}
+
+.request input {
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom: 2px solid white;
+    padding: 0.8%;
+    width: 80%;
+    margin-bottom: 8%;
+    color: white;
+}
+
+.request input::placeholder {
+    color: white;
+}
+
+.bottom {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.bottom a {
+    text-decoration: none;
+    color: black;
+    margin-bottom: 8px;
+}
+
+.bottom a:hover {
+    color: #ffa500;
+    transition: 0.5s;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+}
+
+.threelog {
+    display: flex;
+}
+
+.threelog img {
+    filter: brightness(0%);
+    margin-right: 10px;
+}
+
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    display: flex;
+    gap: 20px;
+    transition: 0.4s ease;
+}
+
+.box {
+    width: 200px;
+    height: 120px;
+    background: black;
+    cursor: pointer;
+}
+
+.perogif2 {
+    width: 100%;
+    height: 40vh;
+    background: url(./Visual/main.gif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.perogif2 h1 {
+    font-size: 300%;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+.solomid {
+    background-color: whitesmoke;
+    width: 70%;
+    border-radius: 10px;
+    margin-left: 15%;
+    padding: 3%;
+    margin-top: 3%;
+}
+
+.tours {
+    display: flex;
+    margin-left: 33%;
+}
+
+.tours div {
+    padding: 1%;
+    border-bottom: 3px solid black;
+}
+
+.tours a {
+    color: black;
+    text-decoration: none;
+}
+
+.inputs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.inputs input {
+    padding: 1.3%;
+    width: 30%;
+    font-size: 20px;
+}
+
+.solomid button {
+    margin-left: 40%;
+}
+
+.bigflex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.fp {
+    background-color: whitesmoke;
+    padding: 3%;
+    width: 30%;
+    height: 90vh;
+    border-radius: 10px;
+}
+
+.common {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.twoinp input {
+    padding: 3%;
+    font-size: 80%;
+}
+
+.teninp {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+}
+
+.teninp button {
+    background-color: white;
+    border: 1px solid lightgray;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 3%;
+}
+
+.teninp button:hover {
+    background-color: dodgerblue;
+    border: none;
+    transition: 0s;
+    color: white;
+}
+
+.radios label {
+    color: gray;
+    margin-left: 1%;
+}
+
+.comb {
+    display: flex;
+}
+
+.mix {
+    background-color: whitesmoke;
+    padding: 3%;
+    width: 600px;
+}
+
+.blue {
+    display: flex;
+    justify-content: space-between;
+    color: dodgerblue;
+    align-items: center;
+}
+
+.blue img {
+    filter: brightness(0);
+    width: 20%;
+}
+
+.inside {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inside div {
+    width: 0.8%;
+    background-color: dodgerblue;
+}
+
+.heart {
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.heart div {
+    border-radius: 50%;
+    background-color: lightgray;
+    padding: 1%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-left: 3%;
+}
+
+.heart img {
+    width: 70%;
+    margin-left: 15%;
+}
+
+.heart div:hover {
+    background: linear-gradient(to right, dodgerblue, aquamarine);
+}
+
+.heart div:hover img {
+    filter: brightness(0);
+}
+
+.opac {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10%;
+}
+
+.trans {
+    box-shadow: 3px 3px 8px gray, -3px -3px 8px gray;
+    background-color: transparent;
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+    padding: 1.3%;
+}
+
+.trans h1 img {
+    width: 50px;
+}
+
+li::marker {
+    color: orange;
+    font-size: 50px;
+}
+
+.info {
+    margin-top: 10%;
+    text-decoration-color: orange;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.greys div {
+    background-color: lightgray;
+    width: 30%;
+    padding: 3%;
+    border-radius: 10px;
+    margin-left: 50%;
+}
+
+.booking {
+    display: flex;
+    margin-top: 10%;
+}
+
+.booking h1 {
+    color: dodgerblue;
+    text-align: center;
+}
+
+.booking input {
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 3%;
+    font-size: 90%;
+    color: black;
+    margin-top: 8%;
+}
+
+.booking div {
+    margin-left: 10%;
+    margin-top: 8%;
+}
+
+.slider-wrapper {
+    width: 100%;
+    margin-top: 10%;
+}
+
+.slider {
+    width: 110%;
+    overflow: hidden;
+}
+
+.track {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    min-width: 400px;
+    height: 420px;
+    background: #eee;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.arrow {
+    font-size: 32px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-right: 10px;
+}
+
+.arrow:hover {
+    color: dodgerblue;
+    transition: 100ms;
+}
+
+.progress {
+    width: 800px;
+    height: 4px;
+    background: #ddd;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 25%;
+    height: 100%;
+    background: #3aa0ff;
+    transition: transform 0.5s ease;
+}
+
+.wrapper1 {
+    width: 100%;
+    overflow: hidden;
+    margin-top: -100px;
+}
+
+
+.slider1 {
+    overflow: hidden;
+    padding: 30px 0;
+}
+
+.track1 {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.6s ease;
+}
+
+.card1 {
+    min-width: 260px;
+    height: 160px;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transform: scale(0.9);
+    transition: all 0.4s ease;
+}
+
+@media (min-width:440px) {
+    .medflex {
+        flex-direction: column;
+    }
+}
