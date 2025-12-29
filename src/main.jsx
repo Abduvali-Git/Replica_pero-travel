@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import './index.css'
+import "./i18n.js"
 import HomeApp from './HomeApp.jsx'
 import ExApp from "./ExApp.jsx"
 import ThirdApp from './ThirdApp.jsx'

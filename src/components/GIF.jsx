@@ -1,6 +1,7 @@
 import logoWhite from "../Visual/logoWhite.png"
 import { Link } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useTransition } from "react";
+import { useTranslation } from "react-i18next";
 import gif from "../Visual/main.gif";
 import img2 from "../Visual/image2.png";
 import img3 from "../Visual/image3.png";
@@ -14,7 +15,19 @@ const slides = [
     { id: 4, img: img4 },
     { id: 5, img: img5 },
 ];
+const languages = [
+    { code: "en", lang: "En" },
+    { code: "ru", lang: "Ру" },
+]
+
+
 export default function Home() {
+    const { t } = useTranslation()
+    const { i18n } = useTranslation()
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng)
+    }
+
     const [activeIndex, setActiveIndex] = useState(0);
     const trackRef = useRef(null);
 
@@ -43,22 +56,30 @@ export default function Home() {
                     <Link to="/"> <img src={logoWhite} alt="" /></Link>
 
                     <div className='links'>
-                        <Link to="/">Home</Link>
-                        <Link to="/ex">Excursions</Link>
-                        <Link to="/third">Personal account</Link>
+                        <Link to="/">{t("home")}</Link>
+                        <Link to="/ex">{t("excursions")}</Link>
+                        <Link to="/third">{t("personal")}</Link>
                     </div>
-                    <div className="i18">
-                        <button>En</button>
-                        <button>Ru</button>
+
+                    <div className="btn-container">
+                        {languages.map((lng) => {
+                            return (
+                                <button className={lng.code === i18n.language ? "selected" : ""}
+                                    key={lng.code} onClick={() => changeLanguage(lng.code)}>
+                                    {lng.lang}
+                                </button>
+                            )
+                        })}
                     </div>
+
                 </nav>
 
                 <div className="medflex">
                     <div className="med">
-                        <h1>TRAVEL</h1>
-                        <h2 className="yellow">with</h2>
+                        <h1>{t("travel")}</h1>
+                        <h2 className="yellow">{t("with")}</h2>
                         <h1 className="outline">PERO TRAVEL</h1><br /><br /><br />
-                        <Link to="/ex"><button className="btn">To excursions </button></Link>
+                        <Link to="/ex"><button className="btn">{t("to")}</button></Link>
                     </div>
                     <div className="column">
                         <img src={logoWhite} alt="" />

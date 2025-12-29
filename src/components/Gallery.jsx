@@ -6,10 +6,17 @@ import image5 from "../Visual/image5.png"
 import image6 from "../Visual/image6.png"
 import image7 from "../Visual/image7.png"
 import image8 from "../Visual/image8.png"
+import { useTranslation } from "react-i18next";
+
 export default function Gallery() {
+    const { t } = useTranslation()
+    const { i18n } = useTranslation()
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng)
+    }
     return (
         <div className="gallery">
-            <div className="header"> <h1>Gallery</h1> <a href="#perogif">See all </a> </div><br /><br /><br />
+            <div className="header"> <h1>{t("gal")}</h1> <a href="#perogif">{t("see")}</a> </div><br /><br /><br />
             <div className="imagesUp">
                 <div className="minus">
                     <img src={image5} alt="" />

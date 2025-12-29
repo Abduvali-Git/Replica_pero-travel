@@ -37,7 +37,12 @@ nav a:hover {
     color: orange;
 }
 
-.i18 button {
+.btn-container {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-container button {
     padding: 3%;
     width: 80px;
     height: 30px;
@@ -46,16 +51,16 @@ nav a:hover {
     color: white;
     background-color: transparent;
     border-color: transparent;
-    border-bottom: 3px double white;
     font-size: 13px;
+    border-radius: 10px;
+    outline: 3px double white;
+    transition: 100ms;
 }
 
-.i18 button:hover {
-    border: none;
-    transition: 100ms;
-    outline: 3px double white;
-    background-color: orange;
-    border-radius: 10px;
+
+.btn-container button.selected {
+    outline-color: orange;
+    color: orange;
 }
 
 .perogif {
@@ -655,8 +660,14 @@ li::marker {
     transition: all 0.4s ease;
 }
 
-@media (min-width:440px) {
-    .medflex {
-        flex-direction: column;
+.perogif2 {
+    width: 300px;
+    background: red;
+}
+
+@media (max-width: 800px) {
+    .perogif2 {
+        width: 100px;
+        background: blue;
     }
 }

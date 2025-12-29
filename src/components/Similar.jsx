@@ -2,27 +2,34 @@ import { useState } from "react";
 import item from "../Visual/item.png"
 import logoWhite from "../Visual/logoWhite.png"
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 export default function Similar() {
-    
+
+    const { t } = useTranslation()
+    const { i18n } = useTranslation()
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng)
+    }
 
     const [visibleBlocks, setVisibleBlocks] = useState([true, true, true, true, true]);
 
     const toggleBlock = (index) => {
         setVisibleBlocks(prev => {
             const newState = [...prev];
-            newState[index] = !newState[index]; // переключаем конкретный блок
+            newState[index] = !newState[index];
             return newState;
         });
     };
     return (
         <>
-            <h1 style={{ textAlign: "center", marginTop: "3%", color: "dodgerblue" }}>Our excursions</h1><br /><br /><br />
+            <h1 style={{ textAlign: "center", marginTop: "3%", color: "dodgerblue" }}>{t("our")}</h1><br /><br /><br />
             <div className="bigflex">
                 <div className="fp">
-                    <h2 style={{ color: "dodgerblue" }}>Filters</h2><br />
+                    <h2 style={{ color: "dodgerblue" }}>{t("fil")}</h2><br />
                     { }
                     <div className="common" onClick={() => toggleBlock(0)}>
-                        <h2>Price</h2>
+                        <h2>{t("price")}</h2>
                         <h2 style={{ color: "dodgerblue" }}>{visibleBlocks[0] ? "_" : "+"}</h2>
                     </div><br />
                     { }
@@ -36,7 +43,7 @@ export default function Similar() {
                     <br />
                     { }
                     <div className="common" onClick={() => toggleBlock(1)}>
-                        <h2>Number of People</h2>
+                        <h2>{t("num")}</h2>
                         <h2 style={{ color: "dodgerblue" }}>{visibleBlocks[1] ? "_" : "+"}</h2>
                     </div><br />
                     { }
@@ -51,7 +58,7 @@ export default function Similar() {
                         <button>8 per.</button>
                         <button>9 per.</button>
                         <button>10 per.</button>
-                        <button>More than 10 per.</button>
+                        <button>{t("than")}</button>
                     </div>}
 
                     <br />
@@ -59,22 +66,22 @@ export default function Similar() {
                     <br />
                     { }
                     <div className="common" onClick={() => toggleBlock(2)}>
-                        <h2>Place</h2>
+                        <h2>{t("place")}</h2>
                         <h2 style={{ color: "dodgerblue" }}>{visibleBlocks[2] ? "_" : "+"}</h2>
                     </div><br />
                     { }
                     {visibleBlocks[2] && <div className="radios">
-                        <input type="radio" /><label>Abkhazia</label><br />
-                        <input type="radio" /><label>Krasnaya Polyana</label><br />
-                        <input type="radio" /><label>Sochi</label><br />
-                        <input type="radio" /><label>Adler</label><br />
+                        <input type="radio" /><label>{t("abk")}</label><br />
+                        <input type="radio" /><label>{t("kras")}</label><br />
+                        <input type="radio" /><label>{t("sochi")}</label><br />
+                        <input type="radio" /><label>{t("adler")}</label><br />
                     </div>}
                     <br />
                     <hr />
                     <br />
                     { }
                     <div className="common" onClick={() => toggleBlock(3)}>
-                        <h2>Duration</h2>
+                        <h2>{t("dura")}</h2>
                         <h2 style={{ color: "dodgerblue" }}>{visibleBlocks[3] ? "_" : "+"}</h2>
                     </div><br />
                     <br />
@@ -82,7 +89,7 @@ export default function Similar() {
                     <br />
                     { }
                     <div className="common" onClick={() => toggleBlock(4)}>
-                        <h2>Date</h2>
+                        <h2>{t("date")}</h2>
                         <h2 style={{ color: "dodgerblue" }}>{visibleBlocks[4] ? "_" : "+"}</h2>
                     </div><br />
                 </div>
@@ -90,28 +97,22 @@ export default function Similar() {
                     <div className="comb">
                         <img src={item} alt="" />
                         <div className="mix">
-                            <h3 style={{ color: "orange" }}>Bus Tour</h3>
-                            <h2>Golden ring of Abkhazia (from Adler)</h2><br />
+                            <h3 style={{ color: "orange" }}>{t("bus")}</h3>
+                            <h2>{t("gold")}</h2><br />
                             <div className="blue">
                                 <h2><img src={logoWhite} alt="" /> 1618 $</h2>
                                 <h2><img src={logoWhite} alt="" /> 1412 $</h2>
-                                <h2><img style={{ width: "16%" }} src={logoWhite} alt="" /> 2,5 hours</h2>
+                                <h2><img style={{ width: "16%" }} src={logoWhite} alt="" />{t("hou")}</h2>
                             </div>
                             <div style={{ display: 'flex', marginLeft: "10px", color: "gray" }}>
-                                <h5 style={{ marginRight: "100px" }}>Adults' ticket</h5>
-                                <h5>Kids' ticket</h5>
+                                <h5 style={{ marginRight: "100px" }}>{t("adt")}</h5>
+                                <h5>{t("kit")}</h5>
                             </div><br />
                             <div className="inside">
-                                <div></div>
-                                <h4>A journey through the "Golden Ring of Abkhazia" <br />
-                                    awaits you in a Mercedes Sprinter (20 seats). A professional <br />
-                                    guide will accompany you along <br />
-                                    the route. Pick-up is from your <br />
-                                    hotel or the nearest bus stop. Border crossing is direct
-                                    <br />...Read more</h4>
+                                <h4>{t("desc3")}</h4>
                             </div><br />
                             <div className="heart">
-                                <Link to="/third"><button className="btn">More details</button></Link>
+                                <Link to="/third"><button className="btn">{t("more")}</button></Link>
                                 <div><img src={logoWhite} alt="" /></div>
                             </div>
                         </div>
@@ -119,28 +120,22 @@ export default function Similar() {
                     <div className="comb">
                         <img src={item} alt="" />
                         <div className="mix">
-                            <h3 style={{ color: "orange" }}>Bus Tour</h3>
-                            <h2>Golden ring of Abkhazia (from Adler)</h2><br />
+                            <h3 style={{ color: "orange" }}>{t("bus")}</h3>
+                            <h2>{t("gold")}</h2><br />
                             <div className="blue">
                                 <h2><img src={logoWhite} alt="" /> 1618 $</h2>
                                 <h2><img src={logoWhite} alt="" /> 1412 $</h2>
-                                <h2><img style={{ width: "16%" }} src={logoWhite} alt="" /> 2,5 hours</h2>
+                                <h2><img style={{ width: "16%" }} src={logoWhite} alt="" />{t("hou")}</h2>
                             </div>
                             <div style={{ display: 'flex', marginLeft: "10px", color: "gray" }}>
-                                <h5 style={{ marginRight: "100px" }}>Adults' ticket</h5>
-                                <h5>Kids' ticket</h5>
+                                <h5 style={{ marginRight: "100px" }}>{t("adt")}</h5>
+                                <h5>{t("kit")}</h5>
                             </div><br />
                             <div className="inside">
-                                <div></div>
-                                <h4>A journey through the "Golden Ring of Abkhazia" <br />
-                                    awaits you in a Mercedes Sprinter (20 seats). A professional <br />
-                                    guide will accompany you along <br />
-                                    the route. Pick-up is from your <br />
-                                    hotel or the nearest bus stop. Border crossing is direct
-                                    <br />...Read more</h4>
+                                <h4>{t("desc3")}</h4>
                             </div><br />
                             <div className="heart">
-                                <Link to="/third"><button className="btn">More details</button></Link>
+                                <Link to="/third"><button className="btn">{t("more")}</button></Link>
                                 <div><img src={logoWhite} alt="" /></div>
                             </div>
                         </div>
@@ -148,28 +143,22 @@ export default function Similar() {
                     <div className="comb">
                         <img src={item} alt="" />
                         <div className="mix">
-                            <h3 style={{ color: "orange" }}>Bus Tour</h3>
-                            <h2>Golden ring of Abkhazia (from Adler)</h2><br />
+                            <h3 style={{ color: "orange" }}>{t("bus")}</h3>
+                            <h2>{t("gold")}</h2><br />
                             <div className="blue">
                                 <h2><img src={logoWhite} alt="" /> 1618 $</h2>
                                 <h2><img src={logoWhite} alt="" /> 1412 $</h2>
-                                <h2><img style={{ width: "16%" }} src={logoWhite} alt="" /> 2,5 hours</h2>
+                                <h2><img style={{ width: "16%" }} src={logoWhite} alt="" />{t("hou")}</h2>
                             </div>
                             <div style={{ display: 'flex', marginLeft: "10px", color: "gray" }}>
-                                <h5 style={{ marginRight: "100px" }}>Adults' ticket</h5>
-                                <h5>Kids' ticket</h5>
+                                <h5 style={{ marginRight: "100px" }}>{t("adt")}</h5>
+                                <h5>{t("kit")}</h5>
                             </div><br />
                             <div className="inside">
-                                <div></div>
-                                <h4>A journey through the "Golden Ring of Abkhazia" <br />
-                                    awaits you in a Mercedes Sprinter (20 seats). A professional <br />
-                                    guide will accompany you along <br />
-                                    the route. Pick-up is from your <br />
-                                    hotel or the nearest bus stop. Border crossing is direct
-                                    <br />...Read more</h4>
+                                <h4>{t("desc3")}</h4>
                             </div><br />
                             <div className="heart">
-                                <Link to="/third"><button className="btn">More details</button></Link>
+                                <Link to="/third"><button className="btn">{t("more")}</button></Link>
                                 <div><img src={logoWhite} alt="" /></div>
                             </div>
                         </div>
@@ -177,32 +166,29 @@ export default function Similar() {
                     <div className="comb">
                         <img src={item} alt="" />
                         <div className="mix">
-                            <h3 style={{ color: "orange" }}>Bus Tour</h3>
-                            <h2>Golden ring of Abkhazia (from Adler)</h2><br />
+                            <h3 style={{ color: "orange" }}>{t("bus")}</h3>
+                            <h2>{t("gold")}</h2><br />
                             <div className="blue">
                                 <h2><img src={logoWhite} alt="" /> 1618 $</h2>
                                 <h2><img src={logoWhite} alt="" /> 1412 $</h2>
-                                <h2><img style={{ width: "16%" }} src={logoWhite} alt="" /> 2,5 hours</h2>
+                                <h2><img style={{ width: "16%" }} src={logoWhite} alt="" />{t("hou")}</h2>
                             </div>
                             <div style={{ display: 'flex', marginLeft: "10px", color: "gray" }}>
-                                <h5 style={{ marginRight: "100px" }}>Adults' ticket</h5>
-                                <h5>Kids' ticket</h5>
+                                <h5 style={{ marginRight: "100px" }}>{t("adt")}</h5>
+                                <h5>{t("kit")}</h5>
                             </div><br />
                             <div className="inside">
-                                <div></div>
-                                <h4>A journey through the "Golden Ring of Abkhazia" <br />
-                                    awaits you in a Mercedes Sprinter (20 seats). A professional <br />
-                                    guide will accompany you along <br />
-                                    the route. Pick-up is from your <br />
-                                    hotel or the nearest bus stop. Border crossing is direct
-                                    <br />...Read more</h4>
+                                <h4>{t("desc3")}</h4>
                             </div><br />
                             <div className="heart">
-                                <Link to="/third"><button className="btn">More details</button></Link>
+                                <Link to="/third"><button className="btn">{t("more")}</button></Link>
                                 <div><img src={logoWhite} alt="" /></div>
                             </div>
                         </div>
                     </div><br />
+                    
+                    
+                    
                 </div>
             </div>
         </>

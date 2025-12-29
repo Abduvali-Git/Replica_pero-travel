@@ -1,8 +1,14 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Tours() {
     const tabs = ["BUS TOUR", "JEEPING", "YACHTING", "CANYONING"];
-    const [active, setActive] = useState(0); // изначально первый
+    const [active, setActive] = useState(0); 
+    const { t } = useTranslation()
+    const { i18n } = useTranslation()
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng)
+    }
     return (
         <div className="solomid">
             <div className="tours">
@@ -22,11 +28,11 @@ export default function Tours() {
 
             </div><br /><br /><br />
             <div className="inputs">
-                <input value={"Abkhazia"} type="text" />
+                <input value={t("abk")} type="text" />
                 <input type="date" />
-                <input value={"5 people"} type="text" />
+                <input value={t("peo")} type="text" />
             </div><br />
-            <button className="btn">Show</button>
+            <button className="btn">{t("show")}</button>
         </div>
     )
 }

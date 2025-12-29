@@ -1,9 +1,16 @@
 import item2 from "../Visual/item2.png"
+import { useTranslation } from "react-i18next";
+
 export default function Infinite() {
+    const { t } = useTranslation()
+    const { i18n } = useTranslation()
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng)
+    }
     return (
         <div className="info" >
             <div>
-                <h1 style={{ color: "dodgerblue" }}>Route description</h1>
+                <h1 style={{ color: "dodgerblue" }}>{t("route")}</h1>
                 <ul>
                     <li>The city of Gagra, Colonnade, restaurant "Gagripsh", Prince <br />
                         Oldenburg Park;</li>
