@@ -71,10 +71,10 @@ export default function Similar() {
                     </div><br />
                     { }
                     {visibleBlocks[2] && <div className="radios">
-                        <input type="radio" /><label>{t("abk")}</label><br />
-                        <input type="radio" /><label>{t("kras")}</label><br />
-                        <input type="radio" /><label>{t("sochi")}</label><br />
-                        <input type="radio" /><label>{t("adler")}</label><br />
+                        <input type="radio" name="place" /><label>{t("abk")}</label><br />
+                        <input type="radio" name="place" /><label>{t("kras")}</label><br />
+                        <input type="radio" name="place" /><label>{t("sochi")}</label><br />
+                        <input type="radio" name="place" /><label>{t("adler")}</label><br />
                     </div>}
                     <br />
                     <hr />
@@ -186,9 +186,9 @@ export default function Similar() {
                             </div>
                         </div>
                     </div><br />
-                    
-                    
-                    
+
+
+
                 </div>
             </div>
         </>

@@ -349,7 +349,8 @@ nav a:hover {
 .perogif2 {
     width: 100%;
     height: 40vh;
-    background: url(./Visual/main.gif);
+    background-color: black;
+    /*background: url(./Visual/main.gif);*/
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -660,14 +661,9 @@ li::marker {
     transition: all 0.4s ease;
 }
 
-.perogif2 {
-    width: 300px;
-    background: red;
-}
 
-@media (max-width: 800px) {
+@media (max-width:440px) {
     .perogif2 {
-        width: 100px;
-        background: blue;
+        height: 20vh;
     }
 }
